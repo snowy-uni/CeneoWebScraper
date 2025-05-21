@@ -17,3 +17,4 @@ def extract(ancestor, selector=None, attribute=None, many=False):
     if attribute:
         return ancestor[attribute]
     return ancestor.text.strip()
+

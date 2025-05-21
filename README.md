@@ -3,7 +3,6 @@
 git config credential.namespace personal
 pip
 
-
 /
 /extract
 /products

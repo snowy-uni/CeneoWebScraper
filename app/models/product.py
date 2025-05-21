@@ -33,7 +33,7 @@ class Product:
             "stats": self.stats,
         }
 
-    def extract_product_name(self):
+    def extract_name(self):
         next_page = f"https://www.ceneo.pl/{self.product_id}#tab=reviews"
         res = requests.get(next_page, headers=headers)
         if res.status_code == 200:
@@ -72,27 +72,27 @@ class Product:
 
     def calc_stats(self):
         reviews = pd.DataFrame.from_dict(self.reviews_to_dict())
-        self.stats["reviews_count"] = reviews.shape[0]
-        self.stats["pros_count"] = reviews.pros.astype(bool).sum()
-        self.stats["cons_count"] = reviews.cons.astype(bool).sum()
-        self.stats["pros_cons_count"] = reviews.apply(
+        self.stats["reviews_count"] = int(reviews.shape[0])
+        self.stats["pros_count"] = int(reviews.pros.astype(bool).sum())
+        self.stats["cons_count"] = int(reviews.cons.astype(bool).sum())
+        self.stats["pros_cons_count"] = int(reviews.apply(
             lambda r: bool(r.pros) and bool(r.cons), axis=1
-        ).sum()
-        self.stats["average_score"] = round(reviews.score.mean(), 2)
+        ).sum())
+        self.stats["average_score"] = float(round(reviews.score.mean(), 2))
         return self
 
     def export_reviews(self):
-        if not os.path.exists(".app/data/opinions"):
-            os.mkdir(".app/data/opinions")
+        if not os.path.exists("./app/data/opinions"):
+            os.mkdir("./app/data/opinions")
         with open(
-            f".app/data/opinions/{self.product_id}.json", "w", encoding="UTF-8"
+            f"./app/data/opinions/{self.product_id}.json", "w", encoding="UTF-8"
         ) as file:
             json.dump(self.reviews_to_dict(), file, indent=4, ensure_ascii=False)
 
     def export_info(self):
-        if not os.path.exists(".app/data/products"):
-            os.mkdir(".app/data/products")
+        if not os.path.exists("./app/data/products"):
+            os.mkdir("./app/data/products")
         with open(
-            f".app/data/products/{self.product_id}.json", "w", encoding="UTF-8"
+            f"./app/data/products/{self.product_id}.json", "w", encoding="UTF-8"
         ) as file:
-            json.dump(self.reviews_to_dict(), file, indent=4, ensure_ascii=False)
+            json.dump(self.info_to_dict(), file, indent=4, ensure_ascii=False)
