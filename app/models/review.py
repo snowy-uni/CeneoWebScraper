@@ -65,3 +65,6 @@ class Review:
         self.dislikes = int(self.dislikes)
         # self.content = self.content.replace('\n', ' ')
         return self
+
+
+

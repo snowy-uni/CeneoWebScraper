@@ -82,6 +82,8 @@ class Product:
         return self
 
     def export_reviews(self):
+        if not os.path.exists("./app/data"):
+            os.mkdir("./app/data")
         if not os.path.exists("./app/data/opinions"):
             os.mkdir("./app/data/opinions")
         with open(
@@ -90,6 +92,8 @@ class Product:
             json.dump(self.reviews_to_dict(), file, indent=4, ensure_ascii=False)
 
     def export_info(self):
+        if not os.path.exists("./app/data"):
+            os.mkdir("./app/data")
         if not os.path.exists("./app/data/products"):
             os.mkdir("./app/data/products")
         with open(

@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 {% block title %}Ekstrakcja {% endblock %}
 {% block content %}
-<form action="{{url_for('extract')}}" method="post">
-    <label for="product_id">ID produktu:</label>
-    <input type="text" name="product_id" id="product_id">
-    <button type="submit">Pobierz opinie</button>
-</form>
+
+<h3 class="site_header">Ekstrajca Produktu</h3>
+<div class="box box-form">
+    <form action="{{url_for('extract')}}" method="post" class="form">
+        <label for="product_id" class="form-label">ID produktu:</label>
+        <div class="form__input">
+            <input type="text" name="product_id" class="form-control" id="product_id">
+            <button type="submit" class="btn btn-primary">Pobierz opinie</button>
+        </div>
+    </form>
+</div>
+
+
 {% endblock %}

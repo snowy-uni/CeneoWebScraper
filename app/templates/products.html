@@ -2,5 +2,28 @@
 {% block title %}Lista produktów {% endblock %}
 
 {% block content %}
-
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID Produktu</th>
+                <th scope="col">Liczba opinii</th>
+                <th scope="col"><i class="bi bi-hand-thumbs-up-fill"></i></th>
+                <th scope="col"><i class="bi bi-hand-thumbs-down-fill"></i></th>
+                <th scope="col">Średnia ocena</th>
+                <th scope="col">Eksportuj</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>123345</td>
+                <td>234</td>
+                <td>13</td>
+                <td>15</td>
+                <td>4.4</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 {% endblock %}
