@@ -2,6 +2,7 @@
 {% block title %}Lista produktów {% endblock %}
 
 {% block content %}
+
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
@@ -15,14 +16,16 @@
             </tr>
         </thead>
         <tbody>
+            {% for product in products %}
             <tr>
-                <td>123345</td>
-                <td>234</td>
-                <td>13</td>
-                <td>15</td>
-                <td>4.4</td>
+                <td>{{product.product_id}}</td>
+                <td>{{product.stats.reviews_count}}</td>
+                <td>{{product.stats.pros_count}}</td>
+                <td>{{product.stats.cons_count}}</td>
+                <td>{{product.stats.average_stats}}</td>
                 <td></td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>

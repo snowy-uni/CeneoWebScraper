@@ -8,8 +8,8 @@ class Review:
         "content": (".user-post__text",),
         "score": (".user-post__score .user-post__score-count",),
         "recomendation": (".user-post__author-recomendation > em",),
-        "pros": (".review-feature__item.review-feature__item--positive", None, True),
-        "cons": (".review-feature__item.review-feature__item--negative", None, True),
+        "pros": (".review-feature__item--positive", None, True),
+        "cons": (".review-feature__item--negative", None, True),
         "likes": (".vote-yes > span",),
         "dislikes": (".vote-no > span",),
         "publish_date": (".user-post__published time:nth-of-type(1)", "datetime"),
@@ -51,8 +51,13 @@ class Review:
         )
 
     def to_dict(self):
-        return { feature: getattr(self, feature) for feature in self.review_scheme.keys()}
+        return {
+            feature: getattr(self, feature) for feature in self.review_scheme.keys()
+        }
 
+    def from_dict(self, review_dict):
+        for key in self.review_scheme.keys():
+            setattr(self, key, review_dict[key])
 
     def extract_features(self, review_raw):
         for key, value in self.review_scheme.items():
@@ -65,6 +70,3 @@ class Review:
         self.dislikes = int(self.dislikes)
         # self.content = self.content.replace('\n', ' ')
         return self
-
-
-
