@@ -8,6 +8,7 @@
         <thead>
             <tr>
                 <th scope="col">ID Produktu</th>
+                <th scope="col">Nazwa</th>
                 <th scope="col">Liczba opinii</th>
                 <th scope="col"><i class="bi bi-hand-thumbs-up-fill"></i></th>
                 <th scope="col"><i class="bi bi-hand-thumbs-down-fill"></i></th>
@@ -18,11 +19,13 @@
         <tbody>
             {% for product in products %}
             <tr>
-                <td>{{product.product_id}}</td>
+                <td><a class="product_id"
+                        href="{{url_for('product', product_id=product.product_id) }}">{{product.product_id}}</a></td>
+                <td>{{product.product_name}}</td>
                 <td>{{product.stats.reviews_count}}</td>
                 <td>{{product.stats.pros_count}}</td>
                 <td>{{product.stats.cons_count}}</td>
-                <td>{{product.stats.average_stats}}</td>
+                <td>{{product.stats.average_score}}</td>
                 <td></td>
             </tr>
             {% endfor %}
