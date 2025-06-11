@@ -1,112 +1,107 @@
 .header {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1rem;
 }
 
 .header__h1 {
-    color: white;
+	color: white;
 }
 
 .header__h2 {
-    color: white;
+	color: white;
 }
 
 .body {
-    /* background-color: #38bdf8; */
-    background-color: #0284c7;
+	/* background-color: #38bdf8; */
+	background-color: #0284c7;
 }
 
-
 .section {
-    background-color: #f0f9ff;
-    border-radius: 15px;
-    margin-bottom: .5rem;
-    box-shadow: 5px 5px 15px 0px #164e63;
+	background-color: #f0f9ff;
+	border-radius: 15px;
+	margin-bottom: 0.5rem;
+	box-shadow: 5px 5px 15px 0px #164e63;
 }
 
 .nav__container {
-     /* background-color: #bae6fd; */
-     background-color: #7dd3fc;
-     border-top-left-radius: 15px;
-     border-bottom-left-radius: 15px;
-     min-height: 50vh;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-    
+	/* background-color: #bae6fd; */
+	background-color: #7dd3fc;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	min-height: 50vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .nav__title {
-     padding: 2rem 1rem;
+	padding: 2rem 1rem;
 }
 
 .nav__ul {
-     display: flex;
-    flex-direction: column;
-    gap: .75rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
 }
 
 .nav__ul li {
-    list-style: none;
-
+	list-style: none;
 }
 
 .nav__ul li i {
-    font-size: 2rem;
+	font-size: 2rem;
 }
 
-
 .nav__ul-link {
-    text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: .75rem;
-    padding: 0.2rem 2rem;
-    background-color:#e0f2fe;
-    border-radius: 15px;
+	text-decoration: none;
+	color: black;
+	font-size: 1.2rem;
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.2rem 2rem;
+	background-color: #e0f2fe;
+	border-radius: 15px;
 }
 
 .nav__ul-link:hover {
-    color: blue;
-     background-color:#bae6fd;
-    transition: all .2s;
+	color: blue;
+	background-color: #bae6fd;
+	transition: all 0.2s;
 }
 
 .box {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
 }
 
 .box--right {
-    text-align: end;
+	text-align: end;
 }
 
 .site_header {
-    padding: 2rem 1rem;
-    text-align: center;
+	padding: 2rem 1rem;
+	text-align: center;
 }
 
 .form {
-      width: 80%;
+	width: 80%;
 }
 
 .box-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .form__input {
-    display: flex;
-    flex-direction: column;
-    gap: .75rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
 }
 
 .btn {
-    width: fit-content;
+	width: fit-content;
 }
-

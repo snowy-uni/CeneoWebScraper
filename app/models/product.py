@@ -29,7 +29,7 @@ class Product:
     def reviews_from_dict(self, reviews_list):
         for review_dict in reviews_list:
             review = Review()
-            review.from_dict()
+            review.from_dict(review_dict)
             self.reviews.append(review)
 
     def info_to_dict(self):

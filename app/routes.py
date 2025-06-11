@@ -50,7 +50,16 @@ def products():
 
 @app.route("/product/<product_id>")
 def product(product_id):
-    return render_template("product.html", product_id=product_id)
+    product_opinions_path = "./app/data/opinions"
+
+    with open(
+        f"{product_opinions_path}/{product_id}.json", "r", encoding="UTF-8"
+    ) as file:
+        product = Product(product_id)
+        test = json.load(file)
+        product.reviews_from_dict(test)
+
+    return render_template("product.html", product_id=product_id, product=product)
 
 
 @app.route("/charts/<product_id>")

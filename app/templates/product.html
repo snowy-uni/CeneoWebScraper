@@ -3,4 +3,73 @@
 
 {% block content %}
 
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID Opinii</th>
+                <th scope="col">Autor</th>
+                <th scope="col">Data publikacji</th>
+                <th scope="col">Data zakupu</th>
+                <th scope="col">Zalety</th>
+                <th scope="col">Wady</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Opinia</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for review in product.reviews %}
+            <tr>
+                <td>{{review.review_id}}</td>
+                <td>{{review.author}}</td>
+                <td>{{review.publish_date}}</td>
+                <td>{{review.purchase_date}}</td>
+                <!-- <td>
+                    {% for pro in review.pros %}
+                    <li>{{pro}}</li>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for con in review.cons %}
+                    <li>{{con}}</li>
+                    {% endfor %}
+                </td> -->
+                <td>{{review.likes}}</td>
+                <td>{{review.dislikes}}</td>
+
+                <td> <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        Więcej
+                    </button></td>
+
+
+            </tr>
+            <!-- Button trigger modal -->
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Understood</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
 {% endblock %}
